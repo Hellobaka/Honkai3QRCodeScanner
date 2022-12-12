@@ -124,7 +124,6 @@ namespace Honkai3QRCodeScanner
             using Graphics g = Graphics.FromImage(img);
             g.CopyFromScreen(new Point(0, 0), new Point(0, 0), Screen.PrimaryScreen.Bounds.Size);
             g.Dispose();
-            img.Save("1.png");
             Invoke(() => WindowState = FormWindowState.Normal);
             string url = QRScanner.ScanQRCode(img);
             if (Scanner.ParseURL(url))
