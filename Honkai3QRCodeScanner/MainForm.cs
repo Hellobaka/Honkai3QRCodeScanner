@@ -29,7 +29,7 @@ namespace Honkai3QRCodeScanner
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadAccountList();
-            VersionValue.Text = ConfigHelper.GetConfig("BH3Ver", "6.3.0");
+            VersionValue.Text = ConfigHelper.GetConfig("BH3Ver", "6.2.0");
             string last = ConfigHelper.GetConfig("LastAccount", "");
             if (last != "")
             {
@@ -107,6 +107,7 @@ namespace Honkai3QRCodeScanner
                         Invoke(() => MessageBox.Show("登录失败了，可以尝试重新登录。若多次登录失败尝试删除账号重新添加", "嗯？", MessageBoxButtons.OK, MessageBoxIcon.Error));
                         return;
                     }
+                    Invoke(() => StatusLabel.Text = "扫码完成");
                 }
                 else
                 {
